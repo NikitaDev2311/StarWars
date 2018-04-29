@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tUW-5r-iMg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Star Wars-->
+        <scene sceneID="nI4-GO-M9B">
+            <objects>
+                <viewController id="AOh-TM-wOo" customClass="PeopleListViewController" customModule="StarWars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NYH-R7-HUg" userLabel="contentView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mhv-ez-3ff">
+                                <rect key="frame" x="16" y="20" width="343" height="563"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mhv-ez-3ff" firstAttribute="leading" secondItem="sZa-KB-lTt" secondAttribute="leading" constant="16" id="895-Sb-Su6"/>
+                            <constraint firstItem="sZa-KB-lTt" firstAttribute="trailing" secondItem="mhv-ez-3ff" secondAttribute="trailing" constant="16" id="8BH-yj-yS6"/>
+                            <constraint firstItem="mhv-ez-3ff" firstAttribute="top" secondItem="sZa-KB-lTt" secondAttribute="top" constant="20" id="SVc-hF-eMP"/>
+                            <constraint firstItem="sZa-KB-lTt" firstAttribute="bottom" secondItem="mhv-ez-3ff" secondAttribute="bottom" constant="20" id="aIS-SC-Bir"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sZa-KB-lTt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Star Wars" id="cvr-u4-Oqb"/>
+                    <connections>
+                        <outlet property="tableView" destination="mhv-ez-3ff" id="5ep-Ez-GOF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4D8-rK-r7I" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="129.98500749625188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ggd-Gg-Ixp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tUW-5r-iMg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="62p-QE-XQ4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AOh-TM-wOo" kind="relationship" relationship="rootViewController" id="AoL-8b-1KL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJn-3X-sZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="130"/>
+        </scene>
+    </scenes>
+</document>
