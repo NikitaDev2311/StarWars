@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class PeopleListViewController: UIViewController {
+class PeopleListViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -111,7 +111,6 @@ extension PeopleListViewController : UITableViewDelegate, DetailViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let people = dataSource[indexPath.row]
         loadDetailView()
     }
     

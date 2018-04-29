@@ -7,5 +7,7 @@ target 'StarWars' do
 
   # Pods for StarWars
   pod 'PinLayout'
+  pod 'SDWebImage', '~> 4.2'
+
 
 end

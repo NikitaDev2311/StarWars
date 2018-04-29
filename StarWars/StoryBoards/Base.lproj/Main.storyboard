@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tUW-5r-iMg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4hr-fz-yj9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,10 +41,39 @@
             </objects>
             <point key="canvasLocation" x="1076" y="129.98500749625188"/>
         </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="UhA-OR-5h5">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreenViewController" id="4hr-fz-yj9" customClass="SplashScreenViewController" customModule="StarWars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cqM-Tj-sOi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pMv-tm-FAk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lE2-EZ-fYR" firstAttribute="trailing" secondItem="pMv-tm-FAk" secondAttribute="trailing" id="Ava-4t-7dJ"/>
+                            <constraint firstItem="pMv-tm-FAk" firstAttribute="top" secondItem="cqM-Tj-sOi" secondAttribute="top" id="Tr5-47-uwU"/>
+                            <constraint firstItem="pMv-tm-FAk" firstAttribute="leading" secondItem="lE2-EZ-fYR" secondAttribute="leading" id="Xea-7F-V1x"/>
+                            <constraint firstItem="lE2-EZ-fYR" firstAttribute="bottom" secondItem="pMv-tm-FAk" secondAttribute="bottom" id="ucJ-Pn-ImT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lE2-EZ-fYR"/>
+                    </view>
+                    <connections>
+                        <outlet property="splashImageView" destination="pMv-tm-FAk" id="DCv-8v-q4Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gV-Gp-owo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-593" y="130"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ggd-Gg-Ixp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tUW-5r-iMg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PeopleListViewController" automaticallyAdjustsScrollViewInsets="NO" id="tUW-5r-iMg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="62p-QE-XQ4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
