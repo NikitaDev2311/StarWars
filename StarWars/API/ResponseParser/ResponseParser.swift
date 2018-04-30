@@ -13,7 +13,7 @@ import SwiftyJSON
 class ResponseParser {
     class func parseToDataArray(_ fromResponse: DataResponse<Any>?) -> [[String : Any]]? {
         let jsonArray = JSON(fromResponse?.result.value! as Any)
-        return jsonArray["results"].arrayObject as? [[String : Any]]
+        return jsonArray[resultKey].arrayObject as? [[String : Any]]
     }
     
     class func parseToDataObject(_ fromResponse: DataResponse<Any>?) -> [String : Any]? {

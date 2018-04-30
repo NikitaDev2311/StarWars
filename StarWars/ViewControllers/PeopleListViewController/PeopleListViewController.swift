@@ -17,6 +17,7 @@ class PeopleListViewController: BaseViewController {
     var detailView : DetailView?
     var maskView = UIView()
     var dataSource = [People]()
+    var selectedPeople : People?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,12 @@ class PeopleListViewController: BaseViewController {
         }
     }
     
+    func openBrowser(with urlString: String) {
+        guard let url = URL(string: urlString) else {return}
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     
     //MARK: - Private
     
@@ -73,6 +80,7 @@ class PeopleListViewController: BaseViewController {
         guard let detailView = UINib(nibName: String(describing: DetailView.self), bundle: nil).instantiate(withOwner: nil, options: [:]).first as? DetailView else {return}
         self.detailView = detailView
         self.detailView?.delegate = self
+        self.detailView?.load(with: selectedPeople!)
         maskViewSetup()
         //load data for view
         maskView.addSubview(self.detailView!)
@@ -121,11 +129,16 @@ extension PeopleListViewController : UITableViewDataSource {
 }
 
 extension PeopleListViewController : UITableViewDelegate, DetailViewDelegate {
+    func detailViewDidTapOpenBrowserButton(_ detailView: DetailView) {
+        openBrowser(with: (selectedPeople?.url)!)
+    }
+    
     func detailViewDidTapCloseButton(_ detailView: DetailView) {
         hideDetailView()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPeople = dataSource[indexPath.row]
         loadDetailView()
     }
     

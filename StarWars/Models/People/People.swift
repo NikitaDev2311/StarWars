@@ -21,6 +21,7 @@ class People : BaseModel {
     var gender          : String?
     var mass            : String?
     var height          : String?
+    var url             : String?
     var starships       : [Any]?
     var films           : [Any]?
     var vehicles        : [Any]?
@@ -37,7 +38,7 @@ class People : BaseModel {
         self.gender             <- map["gender"]
         self.mass               <- map["mass"]
         self.height             <- map["height"]
-        
+        self.url                <- map["url"]
         self.genderType = gender == maleKey ? GenderType.male : GenderType.female
     }
     

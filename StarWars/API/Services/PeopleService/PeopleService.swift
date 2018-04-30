@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class PeopleService {
+    
     static var shared : PeopleService {
         return PeopleService()
     }

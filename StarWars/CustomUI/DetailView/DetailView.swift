@@ -11,6 +11,7 @@ import UIKit
 
 protocol DetailViewDelegate : class {
     func detailViewDidTapCloseButton(_ detailView: DetailView)
+    func detailViewDidTapOpenBrowserButton(_ detailView: DetailView)
 }
 
 class DetailView : UIView {
@@ -25,7 +26,7 @@ class DetailView : UIView {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var browserButton: UIButton!
     
-    let selfHieght = UIScreen.main.bounds.height < screenHeightPlusVersion ? UIScreen.main.bounds.height / 2 : UIScreen.main.bounds.height / 3
+//    let selfHieght = UIScreen.main.bounds.height < screenHeightPlusVersion ? UIScreen.main.bounds.height / 2 : UIScreen.main.bounds.height / 3
     
     
     override func awakeFromNib() {
@@ -33,15 +34,23 @@ class DetailView : UIView {
         setup()
     }
     
+    func load(with people: People) {
+        self.fullnameLabel.text = people.name
+        self.infoLabel.text = String(format: "%@, %@, %@", people.height ?? "", people.mass ?? "", people.gender ?? "")
+    }
+    
     //MARK: - Actions
     @IBAction func closeButtonAction(_ sender: Any) {
         delegate?.detailViewDidTapCloseButton(self)
     }
     
+    @IBAction func openBrowserButtonAction(_ sender: Any) {
+        delegate?.detailViewDidTapOpenBrowserButton(self)
+    }
     //MARK: - Private
     
     private func setup() {
-        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: selfHieght)
+        self.frame.size.width = UIScreen.main.bounds.width
         self.cornerRadius(radius: 10)
         browserButton.cornerRadius(radius: 20)
         browserButton.layer.borderColor = UIColor.red.cgColor

@@ -129,8 +129,8 @@
                         <constraint firstItem="Gsb-PS-1CV" firstAttribute="top" secondItem="hhJ-Cm-gbz" secondAttribute="top" id="HJK-dG-8rn"/>
                         <constraint firstItem="Gsb-PS-1CV" firstAttribute="centerX" secondItem="2lB-YC-Dn4" secondAttribute="centerX" id="Hua-rV-YoL"/>
                         <constraint firstItem="Ltx-in-M6i" firstAttribute="top" secondItem="JgK-IK-AQk" secondAttribute="bottom" constant="2" id="MwQ-Fn-rEa"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="89" id="PdJ-GF-oxy"/>
                         <constraint firstAttribute="bottom" secondItem="0dp-7U-oGW" secondAttribute="bottom" constant="8" id="WOZ-ns-OCb"/>
+                        <constraint firstAttribute="width" secondItem="UmM-Zf-KHX" secondAttribute="height" multiplier="375:89" id="YMa-7Z-y2O"/>
                         <constraint firstItem="Ltx-in-M6i" firstAttribute="bottom" secondItem="0dp-7U-oGW" secondAttribute="bottom" id="asS-ij-ySS"/>
                         <constraint firstItem="JgK-IK-AQk" firstAttribute="centerX" secondItem="Ltx-in-M6i" secondAttribute="centerX" id="de4-DO-6qb"/>
                         <constraint firstItem="2lB-YC-Dn4" firstAttribute="bottom" secondItem="Ltx-in-M6i" secondAttribute="bottom" id="e7L-2Y-InG"/>
@@ -161,11 +161,15 @@
                                     <integer key="value" value="3"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="openBrowserButtonAction:" destination="Kqd-uT-9iL" eventType="touchUpInside" id="CmX-R9-OtS"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Tla-oM-SJk" firstAttribute="centerY" secondItem="wXW-u3-D5D" secondAttribute="centerY" id="4AT-dO-zq9"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="91" id="9yO-X3-iXO"/>
                         <constraint firstItem="Tla-oM-SJk" firstAttribute="centerX" secondItem="wXW-u3-D5D" secondAttribute="centerX" id="mBQ-JO-LUl"/>
                     </constraints>
                 </view>

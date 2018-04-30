@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StarWars/ViewControllers/PeopleListViewController/PeopleListViewController.swift"
-            timestampString = "546740966.5246921"
+            timestampString = "546760978.9218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "prepareContent()"
             landmarkType = "7">
             <Locations>

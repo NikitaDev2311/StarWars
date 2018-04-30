@@ -8,13 +8,7 @@
 
 import Foundation
 
-//let apiKey = "9012450638ca1a926b6b56e8551b4d38"
-
 let host = "https://swapi.co/api"
-
-//let imageUrlPrefix = "https://image.tmdb.org/t/p/w500"
-
-//let videoAppendToResponse = "videos"
 
 public typealias arrayBlock = ([Any]?, String?) -> Void
 
