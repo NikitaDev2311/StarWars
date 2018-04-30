@@ -15,8 +15,9 @@ class PeopleService {
         return PeopleService()
     }
     
-    func getPeopleList(completion: @escaping arrayBlock) {
-        _ = APIManager.shared.get(methodName: APIMethod.peopleList.rawValue, parameters: [:], completion: { (response, error) in
+    func getPeopleList(_ page : Int, completion: @escaping arrayBlock) {
+        let parameters = ["page" : page]
+        _ = APIManager.shared.get(methodName: APIMethod.peopleList.rawValue, parameters: parameters, completion: { (response, error) in
             if let error = error {
                 completion(nil, error)
             }

@@ -16,15 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        setSplashScreen()
         startLoggingNetworkRequests()
         // Override point for customization after application launch.
         return true
-    }
-    
-    private func setSplashScreen() {
-        let splashViewController = UIStoryboard(name: StoryboardConstants.main, bundle: nil).instantiateViewController(withIdentifier: String(describing: SplashScreenViewController.self))
-        self.window?.rootViewController = splashViewController
     }
     
     func startLoggingNetworkRequests() {

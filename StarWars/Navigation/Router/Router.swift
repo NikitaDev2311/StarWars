@@ -21,7 +21,7 @@ class Router : NSObject {
     }
     
     //MARK: - Public
-    @objc func setRootScreen() {
+    @objc public func setRootScreen() {
         let peopleListViewController = navigationControllerFromStoryboard(StoryboardConstants.main, type: PeopleListViewController.self)
         UIApplication.shared.keyWindow?.rootViewController = peopleListViewController
     }

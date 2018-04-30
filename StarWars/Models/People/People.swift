@@ -12,6 +12,7 @@ import ObjectMapper
 enum GenderType : String {
     case male = "M"
     case female = "F"
+    case notSpecified = "N/A"
 }
 
 class People : BaseModel {
@@ -39,7 +40,13 @@ class People : BaseModel {
         self.mass               <- map["mass"]
         self.height             <- map["height"]
         self.url                <- map["url"]
-        self.genderType = gender == maleKey ? GenderType.male : GenderType.female
+        self.starships          <- map["starships"]
+        self.films              <- map["films"]
+        self.vehicles           <- map["vehicles"]
+        
+        guard let genderString = self.gender else {return}
+        self.genderType = genderString == maleKey ? GenderType.male : genderString == femaleKey ? GenderType.female : GenderType.notSpecified
+        
     }
     
 }

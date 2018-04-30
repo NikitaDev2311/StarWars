@@ -28,4 +28,11 @@ class BaseViewController : UIViewController {
         SVProgressHUD.dismiss()
     }
     
+    func showAlertMessage(with error: String, title: String? = nil) {
+        let alertController = UIAlertController(title: title == nil ? AlertTitles.errorAlertTitle : title, message: error, preferredStyle: .alert)
+        let okAction = UIAlertAction(title:AlertTitles.okButtonTitle, style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }

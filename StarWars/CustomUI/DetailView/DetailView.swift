@@ -25,10 +25,7 @@ class DetailView : UIView {
     @IBOutlet weak var vehiclesLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var browserButton: UIButton!
-    
-//    let selfHieght = UIScreen.main.bounds.height < screenHeightPlusVersion ? UIScreen.main.bounds.height / 2 : UIScreen.main.bounds.height / 3
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
@@ -36,7 +33,10 @@ class DetailView : UIView {
     
     func load(with people: People) {
         self.fullnameLabel.text = people.name
-        self.infoLabel.text = String(format: "%@, %@, %@", people.height ?? "", people.mass ?? "", people.gender ?? "")
+        infoLabel.text = String(format: "%@, %@, %@", people.height ?? "", people.mass ?? "", people.gender ?? "")
+        starshipsLabel.text = String.string(from: people.starships?.count ?? 0)
+        filmsLabel.text = String.string(from: people.films?.count ?? 0)
+        vehiclesLabel.text = String.string(from: people.vehicles?.count ?? 0)
     }
     
     //MARK: - Actions
@@ -53,8 +53,10 @@ class DetailView : UIView {
         self.frame.size.width = UIScreen.main.bounds.width
         self.cornerRadius(radius: 10)
         browserButton.cornerRadius(radius: 20)
+        //set border
         browserButton.layer.borderColor = UIColor.red.cgColor
         browserButton.layer.borderWidth = 1.0
+        //set shadow
         browserButton.layer.shadowOffset = CGSize(width: 0, height: 1)
         browserButton.layer.shadowOpacity = 0.6
         browserButton.layer.shadowRadius = 0.5

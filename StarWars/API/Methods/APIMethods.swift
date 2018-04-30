@@ -10,6 +10,4 @@ import Foundation
 
 public enum APIMethod : String {
     case peopleList = "/people"
-    
-    
 }

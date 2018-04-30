@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1131CD9D2097B8F3008B0C9D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1131CD9C2097B8F3008B0C9D /* StringExtension.swift */; };
 		11BA4BF82096759E001072C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BA4BF72096759E001072C6 /* AppDelegate.swift */; };
 		11BA4BFD2096759E001072C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BA4BFB2096759E001072C6 /* Main.storyboard */; };
 		11BA4BFF2096759F001072C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BA4BFE2096759F001072C6 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1131CD9C2097B8F3008B0C9D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		11BA4BF42096759E001072C6 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BA4BF72096759E001072C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11BA4BFC2096759E001072C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1131CD9B2097B8E1008B0C9D /* String */ = {
+			isa = PBXGroup;
+			children = (
+				1131CD9C2097B8F3008B0C9D /* StringExtension.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 		11BA4BEB2096759E001072C6 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		11BA4C18209676EB001072C6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1131CD9B2097B8E1008B0C9D /* String */,
 				11BA4C19209676F2001072C6 /* UIView */,
 			);
 			path = Extensions;
@@ -446,6 +457,7 @@
 				11BA4C3B20968E22001072C6 /* PeopleService.swift in Sources */,
 				11BA4C4520969216001072C6 /* BaseModel.swift in Sources */,
 				11BA4C1B209676FD001072C6 /* UIViewExtension.swift in Sources */,
+				1131CD9D2097B8F3008B0C9D /* StringExtension.swift in Sources */,
 				11BA4C3720968D9F001072C6 /* APIMethods.swift in Sources */,
 				11BA4C14209676A8001072C6 /* PeopleListTableViewCell.swift in Sources */,
 				11BA4C0F20967668001072C6 /* DetailView.swift in Sources */,

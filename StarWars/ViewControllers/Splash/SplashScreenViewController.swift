@@ -28,7 +28,7 @@ class SplashScreenViewController : BaseViewController {
     //MARK: - Private
     
     fileprivate func setSplashImage() {
-        let url = URL(string: splashImageURLString)
+        guard let url = URL(string: splashImageURLString) else {return}
         splashImageView.sd_setImage(with: url, completed: nil)
     }
     

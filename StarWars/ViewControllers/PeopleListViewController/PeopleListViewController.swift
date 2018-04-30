@@ -17,24 +17,35 @@ class PeopleListViewController: BaseViewController {
     var detailView : DetailView?
     var maskView = UIView()
     var dataSource = [People]()
+    var tempResults = [People]()
     var selectedPeople : People?
+    var pageNumber = defaultPage
+    var tableViewOffset = CGPoint()
+    var isLoadingNow = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
     }
     
-    func getPeopleList() {
+    //MARK: - Public
+    
+    func getPeopleList(with page: Int) {
         showLoading()
-        PeopleService.shared.getPeopleList { [weak self] (response, error) in
+        PeopleService.shared.getPeopleList(page) { [weak self] (response, error) in
             let weakSelf = self
             weakSelf?.hideLoading()
             if let error = error {
+                weakSelf?.showAlertMessage(with: error)
                 return
             }
             guard let peopleList = response as? [People] else {return}
-            weakSelf?.dataSource = peopleList
+            weakSelf?.pageNumber += 1
+            weakSelf?.tempResults = peopleList
+            weakSelf?.dataSource += (weakSelf?.tempResults)!
             weakSelf?.tableView.reloadData()
+            weakSelf?.isLoadingNow = false
         }
     }
     
@@ -53,7 +64,7 @@ class PeopleListViewController: BaseViewController {
     }
     
     private func prepareContent() {
-        getPeopleList()
+        getPeopleList(with: pageNumber)
     }
     
     private func tableViewSetup() {
@@ -82,7 +93,6 @@ class PeopleListViewController: BaseViewController {
         self.detailView?.delegate = self
         self.detailView?.load(with: selectedPeople!)
         maskViewSetup()
-        //load data for view
         maskView.addSubview(self.detailView!)
         self.detailView?.pin.bottom(0)
         transitionAnimate(for: self.detailView!)
@@ -141,9 +151,22 @@ extension PeopleListViewController : UITableViewDelegate, DetailViewDelegate {
         selectedPeople = dataSource[indexPath.row]
         loadDetailView()
     }
+        
+    //MARK: - UIScrollViewDelegate
     
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return true
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //Reloading data when page end became
+        tableViewOffset = tableView.contentOffset
+        let heightDifference = tableView.contentSize.height - tableView.frame.size.height
+        if tableViewOffset.y > (heightDifference) {
+            if !isLoadingNow {
+                if tempResults.count >= onePageElementsCount {
+                    getPeopleList(with: pageNumber)
+                    isLoadingNow = true
+                    return
+                }
+            }
+        }
     }
     
 }
