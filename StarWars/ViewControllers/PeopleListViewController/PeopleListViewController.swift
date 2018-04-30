@@ -16,11 +16,25 @@ class PeopleListViewController: BaseViewController {
     
     var detailView : DetailView?
     var maskView = UIView()
-    var dataSource = [String]()
+    var dataSource = [People]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+    }
+    
+    func getPeopleList() {
+        showLoading()
+        PeopleService.shared.getPeopleList { [weak self] (response, error) in
+            let weakSelf = self
+            weakSelf?.hideLoading()
+            if let error = error {
+                return
+            }
+            guard let peopleList = response as? [People] else {return}
+            weakSelf?.dataSource = peopleList
+            weakSelf?.tableView.reloadData()
+        }
     }
     
     
@@ -32,7 +46,7 @@ class PeopleListViewController: BaseViewController {
     }
     
     private func prepareContent() {
-        dataSource = ["1", "2", "3", "4", "5", "6"]
+        getPeopleList()
     }
     
     private func tableViewSetup() {
@@ -94,8 +108,9 @@ extension PeopleListViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PeopleListTableViewCell.self), for: indexPath)
-        cell.selectionStyle = .none
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PeopleListTableViewCell.self), for: indexPath) as! PeopleListTableViewCell
+        let people = dataSource[indexPath.row]
+        cell.load(with: people)
         return cell
     }
     

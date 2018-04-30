@@ -13,7 +13,6 @@ import SDWebImage
 class SplashScreenViewController : BaseViewController {
     
     @IBOutlet weak var splashImageView: UIImageView!
-    
     var timer : Timer?
     
     override func viewDidLoad() {
@@ -37,10 +36,10 @@ class SplashScreenViewController : BaseViewController {
         if timer != nil {
             timer?.invalidate()
         }
-        timer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(someSelector), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(setRootScreenSelector), userInfo: nil, repeats: false)
     }
     
-    @objc func someSelector() {
+    @objc private func setRootScreenSelector() {
         router.setRootScreen()
     }
 }

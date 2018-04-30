@@ -24,18 +24,21 @@ class PeopleListTableViewCell : UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        //        peopleNameLabel.text = ""
-        //        birthYearLabel.text = ""
-        //        genderImageView.image = UIImage()
+        peopleNameLabel.text = ""
+        birthYearLabel.text = ""
+        genderImageView.image = UIImage()
     }
     
-    func load(with people: String) {
-        
+    func load(with people: People) {
+        self.peopleNameLabel.text = people.name
+        self.birthYearLabel.text = people.birthYear
+        self.genderImageView.image = people.genderType == .male ? #imageLiteral(resourceName: "male") : people.genderType == .female ? #imageLiteral(resourceName: "female") : UIImage()
     }
     
     //MARK: - Private
     
     private func setup() {
+        self.selectionStyle = .none
         generalView.cornerRadius(radius: 10)
         generalView.clipsToBounds = false
         generalView.layer.shadowOffset = CGSize(width: 0, height: 2)

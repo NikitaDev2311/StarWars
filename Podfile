@@ -8,6 +8,10 @@ target 'StarWars' do
   # Pods for StarWars
   pod 'PinLayout'
   pod 'SDWebImage', '~> 4.2'
-
+  pod "Alamofire"
+  pod "AlamofireNetworkActivityLogger"
+  pod "ObjectMapper"
+  pod "SVProgressHUD"
+  pod "SwiftyJSON"
 
 end

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 class BaseViewController : UIViewController {
     
@@ -15,5 +16,16 @@ class BaseViewController : UIViewController {
         Router(self.navigationController)
     }()
     
+    func showLoading() {
+        SVProgressHUD.setBackgroundColor(UIColor.clear)
+        SVProgressHUD.setForegroundColor(UIColor.white)
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
+        SVProgressHUD.setRingThickness(5.0)
+        SVProgressHUD.show()
+    }
+    
+    func hideLoading() {
+        SVProgressHUD.dismiss()
+    }
     
 }

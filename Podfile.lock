@@ -1,22 +1,43 @@
 PODS:
+  - Alamofire (4.7.1)
+  - AlamofireNetworkActivityLogger (2.3.0):
+    - Alamofire (~> 4.6)
+  - ObjectMapper (3.1.0)
   - PinLayout (1.6.0)
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireNetworkActivityLogger
+  - ObjectMapper
   - PinLayout
   - SDWebImage (~> 4.2)
+  - SVProgressHUD
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireNetworkActivityLogger
+    - ObjectMapper
     - PinLayout
     - SDWebImage
+    - SVProgressHUD
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  AlamofireNetworkActivityLogger: 6f3076652ab7fa6c819b59be08ea038d339e36d8
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PinLayout: a2bbe9057d49a1e326b13dc4fe8c14751f8c8844
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 37a3a516cc381dbbc6e40e517485c8f4195069df
+PODFILE CHECKSUM: d70ef1beceb6eefd6a334742332ccce74b0b807a
 
 COCOAPODS: 1.5.0
